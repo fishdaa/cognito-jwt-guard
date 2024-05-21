@@ -7,7 +7,6 @@ use DomainException;
 use Firebase\JWT\BeforeValidException;
 use Firebase\JWT\ExpiredException;
 use Firebase\JWT\JWT;
-use Firebase\JWT\Key;
 use Firebase\JWT\SignatureInvalidException;
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Http\Request;
@@ -74,7 +73,7 @@ class TokenService
 
         try{
             // JWT::decode will throw an exception if the token is expired or otherwise invalid
-            $payload = JWT::decode(new Key($jwt), $keys, ['RS256']);
+            $payload = JWT::decode($jwt, $keys);
         }catch(
             InvalidArgumentException
             | UnexpectedValueException
