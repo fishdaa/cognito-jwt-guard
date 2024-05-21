@@ -21,26 +21,26 @@
     },
     "license": "MIT",
     "authors": [
-      {
-        "name": "David Alsbury",
-        "email": "david@alsbury.com",
-        "homepage": "https://alsbury.com",
-        "role": "Developer"
-      },
-      {
-        "name": "Ben Bjurstrom",
-        "email": "ben@jelled.com",
-        "homepage": "https://benbjurstrom.com",
-        "role": "Original Developer"
-      }
+        {
+            "name": "David Alsbury",
+            "email": "david@alsbury.com",
+            "homepage": "https://alsbury.com",
+            "role": "Developer"
+        },
+        {
+            "name": "Ben Bjurstrom",
+            "email": "ben@jelled.com",
+            "homepage": "https://benbjurstrom.com",
+            "role": "Original Developer"
+        }
     ],
     "require": {
         "php": ">=8.0",
         "ext-json": "*",
-        "illuminate/auth": "^8|^9",
-        "illuminate/contracts": "^8|^9",
-        "illuminate/http": "^8.46|^9",
-        "illuminate/support": "^8|^9",
+        "illuminate/auth": "^8.0|^9.0|^10.0|^11.0",
+        "illuminate/contracts": "^8.0|^9.0|^10.0|^11.0",
+        "illuminate/http": "^8.46|^9.0|^10.0|^11.0",
+        "illuminate/support": "^8.0|^9.0|^10.0|^11.0",
         "firebase/php-jwt": "^5.3"
     },
     "require-dev": {
