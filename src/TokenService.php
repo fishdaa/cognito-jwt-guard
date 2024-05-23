@@ -49,6 +49,7 @@ class TokenService
      */
     public function getCognitoUuidFromToken(string $jwt): string
     {
+        
         $payload = $this->decode($jwt);
 
         $cognitoUuid = $payload->{$this->uuidColumn};
@@ -73,6 +74,7 @@ class TokenService
 
         try{
             // JWT::decode will throw an exception if the token is expired or otherwise invalid
+            JWT::$leeway = 60;
             $payload = JWT::decode($jwt, $keys);
         }catch(
             InvalidArgumentException
