@@ -35,7 +35,7 @@ class ProviderRepository
         $model = $this->provider->createModel();
         $user = $model->where(config('cognito.cognito_uuid_key'), $cognitoUuid)->first();
 
-        \Log::debug(collect($user));
+        // \Log::debug(collect($user));
 
         if ($user) {
             return $user;

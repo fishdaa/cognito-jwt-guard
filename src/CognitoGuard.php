@@ -55,9 +55,9 @@ class CognitoGuard implements Guard
         }
 
         $cognitoUuid = $ts->getCognitoUuidFromToken($jwt);
-        \Log::debug(json_encode($jwt));
-        \Log::debug(json_encode($cognitoUuid));
-        \Log::debug(json_encode($this->provider->getCognitoUser($cognitoUuid)));
+        // \Log::debug(json_encode($jwt));
+        // \Log::debug(json_encode($cognitoUuid));
+        // \Log::debug(json_encode($this->provider->getCognitoUser($cognitoUuid)));
 
         return $this->user = $this->provider->getCognitoUser($cognitoUuid);
     }
