@@ -20,7 +20,7 @@ use function explode;
 
 class TokenService
 {
-    protected String $uuidColumn;
+    protected string $uuidColumn;
 
     public function __construct()
     {
@@ -153,9 +153,9 @@ class TokenService
             throw new InvalidTokenException  ('Invalid token attributes. Token must include a column which contains the UUID.');
         }
 
-        $uuid = $payload->{$this->uuidColumn};
+        $uuid = $payload->{$this->uuidColumn} ?? null;
 
-        if(! Uuid::isValid($uuid) && !isset($payload->{$this->uuidColumn})){
+        if(! Uuid::isValid((string)$uuid) && !isset($payload->{$this->uuidColumn})){
             throw new InvalidTokenException  ('Invalid token attributes. Parameters "username" and "cognito:username" must be a UUID.');
         }
     }

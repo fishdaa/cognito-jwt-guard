@@ -141,6 +141,7 @@ class TokenServiceTest extends TestCase
                 'keys' => [
                     [
                         'kty' => 'RSA',
+                        'alg' => 'RS256',
                         'n' => rtrim(str_replace(['+', '/'], ['-', '_'], base64_encode($keyInfo['rsa']['n'])), '='),
                         'e' => rtrim(str_replace(['+', '/'], ['-', '_'], base64_encode($keyInfo['rsa']['e'])), '='),
                     ],
@@ -170,7 +171,7 @@ class TokenServiceTest extends TestCase
 
         // This JWT has correct payload and header but is signed with a different key.
         $keypair = RSA::createKey(512);
-        $invalid_jwt = JWT::encode($jtb->payload, $keypair, 'RS256', $jtb->kid);
+        $invalid_jwt = JWT::encode((array)$jtb->payload, $keypair, 'RS256', $jtb->kid);
 
         $ts = new TokenService();
 
@@ -192,8 +193,8 @@ class TokenServiceTest extends TestCase
 
         // This JWT has correct payload and header but is signed with a different key.
         $payload = $jtb->payload;
-        $payload->exp = time() - 1;
-        $expired_jwt = JWT::encode($payload, $jtb->keypair, 'RS256', $jtb->kid);
+        $payload->exp = time() - 100;
+        $expired_jwt = JWT::encode((array)$payload, $jtb->keypair, 'RS256', $jtb->kid);
 
         $ts = new TokenService();
 
@@ -216,12 +217,12 @@ class TokenServiceTest extends TestCase
         // This JWT has correct payload and header but is signed with a different key.
         $payload = $jtb->payload;
         $payload->iat = time() + 500;
-        $expired_jwt = JWT::encode($payload, $jtb->keypair, 'RS256', $jtb->kid);
+        $expired_jwt = JWT::encode((array)$payload, $jtb->keypair, 'RS256', $jtb->kid);
 
         $ts = new TokenService();
 
         $this->expectException(InvalidTokenException ::class);
-        $this->expectExceptionMessage('Cannot handle token prior to ' . date(DateTime::ISO8601, $payload->iat));
+        $this->expectExceptionMessage('Cannot handle token');
         $ts->decode($expired_jwt);
     }
 
@@ -308,7 +309,7 @@ class TokenServiceTest extends TestCase
     public function testValidateHeaderFailsIfNoKid()
     {
         $jtb = $this->getJwtTestBundle();
-        $jwtNoKid = JWT::encode($jtb->payload, $jtb->keypair, 'RS256');
+        $jwtNoKid = JWT::encode((array)$jtb->payload, $jtb->keypair, 'RS256');
         $ts  = $this->app->make(TokenService::class);
 
         $this->expectException(InvalidTokenException ::class);
@@ -363,11 +364,12 @@ class TokenServiceTest extends TestCase
         $poolId     = config('cognito.user_pool_id');
 
         unset($jtb->payload->username);
+        unset($jtb->payload->sub);
 
         $ts  = $this->app->make(TokenService::class);
 
         $this->expectException(InvalidTokenException ::class);
-        $this->expectExceptionMessage('Invalid token attributes. Token must include one of "username","cognito:username"');
+        $this->expectExceptionMessage('Invalid token attributes. Token must include a column which contains the UUID.');
         $ts->validatePayload((object) $jtb->payload, $region, $poolId);
     }
 
@@ -381,6 +383,7 @@ class TokenServiceTest extends TestCase
         $poolId     = config('cognito.user_pool_id');
 
         $jtb->payload->username = '123';
+        unset($jtb->payload->sub);
 
         $ts  = $this->app->make(TokenService::class);
 

@@ -79,11 +79,12 @@ abstract class TestCase extends Orchestra
         $keypair = RSA::createKey(512);
 
         $kid = (base64_encode(hash ( 'sha256' , $keypair->getPublicKey(), true)));
-        $jwt = JWT::encode($payload, $keypair, 'RS256', $kid);
+        $jwt = JWT::encode((array)$payload, $keypair, 'RS256', $kid);
         $keyInfo = openssl_pkey_get_details(openssl_pkey_get_public($keypair->getPublicKey()));
         $jwk = [
             'kty' => 'RSA',
             'kid' => $kid,
+            'alg' => 'RS256',
             'n' => rtrim(str_replace(['+', '/'], ['-', '_'], base64_encode($keyInfo['rsa']['n'])), '='),
             'e' => rtrim(str_replace(['+', '/'], ['-', '_'], base64_encode($keyInfo['rsa']['e'])), '='),
         ];
