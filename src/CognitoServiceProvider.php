@@ -1,6 +1,6 @@
 <?php
 
-namespace Alsbury\CognitoGuard;
+namespace Fishdaa\CognitoGuard;
 
 use Illuminate\Foundation\Application;
 use Illuminate\Support\ServiceProvider;

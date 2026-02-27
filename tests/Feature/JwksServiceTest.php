@@ -1,8 +1,8 @@
 <?php
-namespace Alsbury\CognitoGuard\Tests\Feature;
+namespace Fishdaa\CognitoGuard\Tests\Feature;
 
-use Alsbury\CognitoGuard\JwksService;
-use Alsbury\CognitoGuard\Tests\TestCase;
+use Fishdaa\CognitoGuard\JwksService;
+use Fishdaa\CognitoGuard\Tests\TestCase;
 use Firebase\JWT\JWK;
 use Firebase\JWT\JWT;
 

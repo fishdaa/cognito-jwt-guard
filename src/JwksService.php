@@ -1,6 +1,6 @@
 <?php
 
-namespace Alsbury\CognitoGuard;
+namespace Fishdaa\CognitoGuard;
 
 use Firebase\JWT\JWK;
 use Illuminate\Support\Facades\Cache;
@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Http;
  * A class for downloading and caching the Cognito JWKS for the given user pool and
  * region.
  *
- * @package Alsbury\CognitoGuard
+ * @package Fishdaa\CognitoGuard
  */
 class JwksService
 {

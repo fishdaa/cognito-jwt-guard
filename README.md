@@ -17,13 +17,13 @@ This project is fork of [benbjurstrom/cognito-jwt-guard](https://github.com/benb
 You can install the package using composer
 
 ```shell script
-composer require alsbury/cognito-jwt-guard
+composer require fishdaa/cognito-jwt-guard
 ```
 
-Next publish the [migration](https://github.com/alsbury/cognito-jwt-guard/blob/master/database/migrations/add_cognito_uuid_to_users_table.php.stub) and the [config/cognito.php](https://github.com/alsbury/cognito-jwt-guard/blob/master/config/cognito.php) config file with:
+Next publish the [migration](https://github.com/fishdaa/cognito-jwt-guard/blob/master/database/migrations/add_cognito_uuid_to_users_table.php.stub) and the [config/cognito.php](https://github.com/fishdaa/cognito-jwt-guard/blob/master/config/cognito.php) config file with:
 
 ```shell script
- php artisan vendor:publish --provider="Alsbury\CognitoGuard\CognitoServiceProvider"
+ php artisan vendor:publish --provider="Fishdaa\CognitoGuard\CognitoServiceProvider"
 ```
 
 Next go ahead and run your migrations. This will add the required cognito_uuid property to your users table

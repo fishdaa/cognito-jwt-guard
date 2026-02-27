@@ -1,11 +1,11 @@
 <?php
-namespace Alsbury\CognitoGuard\Tests;
+namespace Fishdaa\CognitoGuard\Tests;
 
 use Orchestra\Testbench\TestCase as Orchestra;
 use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
-use Alsbury\CognitoGuard\Tests\Fixtures\User;
-use Alsbury\CognitoGuard\CognitoServiceProvider;
+use Fishdaa\CognitoGuard\Tests\Fixtures\User;
+use Fishdaa\CognitoGuard\CognitoServiceProvider;
 use Ramsey\Uuid\Uuid;
 use phpseclib3\Crypt\RSA;
 use Firebase\JWT\JWT;

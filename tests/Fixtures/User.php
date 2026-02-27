@@ -1,8 +1,8 @@
 <?php
 
-namespace Alsbury\CognitoGuard\Tests\Fixtures;
+namespace Fishdaa\CognitoGuard\Tests\Fixtures;
 
-use Alsbury\CognitoGuard\Tests\Fixtures\Factories\UserFactory;
+use Fishdaa\CognitoGuard\Tests\Fixtures\Factories\UserFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 

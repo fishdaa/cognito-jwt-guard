@@ -1,13 +1,13 @@
 <?php
-namespace Alsbury\CognitoGuard\Tests\Unit;
+namespace Fishdaa\CognitoGuard\Tests\Unit;
 
-use Alsbury\CognitoGuard\CognitoGuard;
-use Alsbury\CognitoGuard\Exceptions\MethodNotSupportedException;
-use Alsbury\CognitoGuard\JwksService;
-use Alsbury\CognitoGuard\ProviderRepository;
-use Alsbury\CognitoGuard\TokenService;
-use Alsbury\CognitoGuard\Tests\Fixtures\User;
-use Alsbury\CognitoGuard\Tests\TestCase;
+use Fishdaa\CognitoGuard\CognitoGuard;
+use Fishdaa\CognitoGuard\Exceptions\MethodNotSupportedException;
+use Fishdaa\CognitoGuard\JwksService;
+use Fishdaa\CognitoGuard\ProviderRepository;
+use Fishdaa\CognitoGuard\TokenService;
+use Fishdaa\CognitoGuard\Tests\Fixtures\User;
+use Fishdaa\CognitoGuard\Tests\TestCase;
 use Firebase\JWT\JWK;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Middleware\SubstituteBindings;

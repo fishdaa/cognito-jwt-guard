@@ -1,5 +1,5 @@
 <?php
-namespace Alsbury\CognitoGuard\Exceptions;
+namespace Fishdaa\CognitoGuard\Exceptions;
 
 class MethodNotSupportedException extends \Exception
 {

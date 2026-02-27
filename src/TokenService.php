@@ -1,8 +1,8 @@
 <?php
 
-namespace Alsbury\CognitoGuard;
+namespace Fishdaa\CognitoGuard;
 
-use Alsbury\CognitoGuard\Exceptions\InvalidTokenException;
+use Fishdaa\CognitoGuard\Exceptions\InvalidTokenException;
 use DomainException;
 use Firebase\JWT\BeforeValidException;
 use Firebase\JWT\ExpiredException;

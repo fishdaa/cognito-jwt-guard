@@ -1,5 +1,5 @@
 <?php
-namespace Alsbury\CognitoGuard\Exceptions;
+namespace Fishdaa\CognitoGuard\Exceptions;
 
 use Illuminate\Auth\AuthenticationException;
 

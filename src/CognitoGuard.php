@@ -1,8 +1,8 @@
 <?php
 
-namespace Alsbury\CognitoGuard;
+namespace Fishdaa\CognitoGuard;
 
-use Alsbury\CognitoGuard\Exceptions\MethodNotSupportedException;
+use Fishdaa\CognitoGuard\Exceptions\MethodNotSupportedException;
 use Illuminate\Auth\GuardHelpers;
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Contracts\Auth\Guard;

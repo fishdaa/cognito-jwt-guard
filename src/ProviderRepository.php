@@ -1,6 +1,6 @@
 <?php
 
-namespace Alsbury\CognitoGuard;
+namespace Fishdaa\CognitoGuard;
 
 use Illuminate\Auth\EloquentUserProvider;
 use Illuminate\Contracts\Auth\Authenticatable;
@@ -8,7 +8,7 @@ use Illuminate\Contracts\Auth\Authenticatable;
 
 /**
  * Class ProviderRepository
- * @package Alsbury\CognitoGuard
+ * @package Fishdaa\CognitoGuard
  */
 class ProviderRepository
 {

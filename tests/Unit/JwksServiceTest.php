@@ -1,10 +1,10 @@
 <?php
-namespace Alsbury\CognitoGuard\Tests\Unit;
+namespace Fishdaa\CognitoGuard\Tests\Unit;
 
-use Alsbury\CognitoGuard\Exceptions\InvalidTokenException;
-use Alsbury\CognitoGuard\JwksService;
-use Alsbury\CognitoGuard\Tests\TestCase;
-use Alsbury\CognitoGuard\TokenService;
+use Fishdaa\CognitoGuard\Exceptions\InvalidTokenException;
+use Fishdaa\CognitoGuard\JwksService;
+use Fishdaa\CognitoGuard\Tests\TestCase;
+use Fishdaa\CognitoGuard\TokenService;
 use Firebase\JWT\JWK;
 use Illuminate\Http\Client\RequestException;
 use Illuminate\Support\Facades\Cache;

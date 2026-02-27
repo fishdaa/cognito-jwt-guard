@@ -1,8 +1,8 @@
 <?php
-namespace Alsbury\CognitoGuard\Tests\Feature;
+namespace Fishdaa\CognitoGuard\Tests\Feature;
 
-use Alsbury\CognitoGuard\Tests\TestCase;
-use Alsbury\CognitoGuard\Tests\Fixtures\User;
+use Fishdaa\CognitoGuard\Tests\TestCase;
+use Fishdaa\CognitoGuard\Tests\Fixtures\User;
 use Illuminate\Support\Collection;
 
 class CognitoGuardTest extends TestCase

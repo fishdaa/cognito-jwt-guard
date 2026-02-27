@@ -1,5 +1,5 @@
 {
-    "name": "alsbury/cognito-jwt-guard",
+    "name": "fishdaa/cognito-jwt-guard",
     "description": "A laravel auth guard for JSON Web Tokens issued by Amazon AWS Cognito forked from benbjurstrom/cognito-jwt-guard",
     "type": "laravel",
     "keywords": [
@@ -14,10 +14,10 @@
         "json web token",
         "jwks"
     ],
-    "homepage": "https://github.com/alsbury/cognito-jwt-guard",
+    "homepage": "https://github.com/fishdaa/cognito-jwt-guard",
     "support": {
-        "issues": "https://github.com/alsbury/cognito-jwt-guard/issues",
-        "source": "https://github.com/alsbury/cognito-jwt-guard"
+        "issues": "https://github.com/fishdaa/cognito-jwt-guard/issues",
+        "source": "https://github.com/fishdaa/cognito-jwt-guard"
     },
     "license": "MIT",
     "authors": [
@@ -51,18 +51,18 @@
     },
     "autoload": {
         "psr-4": {
-            "Alsbury\\CognitoGuard\\": "src/"
+            "Fishdaa\\CognitoGuard\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Alsbury\\CognitoGuard\\Tests\\": "tests"
+            "Fishdaa\\CognitoGuard\\Tests\\": "tests"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Alsbury\\CognitoGuard\\CognitoServiceProvider"
+                "Fishdaa\\CognitoGuard\\CognitoServiceProvider"
             ]
         }
     },

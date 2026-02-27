@@ -1,11 +1,11 @@
 <?php
-namespace Alsbury\CognitoGuard\Tests\Unit;
+namespace Fishdaa\CognitoGuard\Tests\Unit;
 
-use Alsbury\CognitoGuard\Exceptions\MissingRequiredAttributesException;
-use Alsbury\CognitoGuard\ProviderRepository;
-use Alsbury\CognitoGuard\Tests\Fixtures\User;
-use Alsbury\CognitoGuard\Tests\TestCase;
-use Alsbury\CognitoGuard\UserAttributeService;
+use Fishdaa\CognitoGuard\Exceptions\MissingRequiredAttributesException;
+use Fishdaa\CognitoGuard\ProviderRepository;
+use Fishdaa\CognitoGuard\Tests\Fixtures\User;
+use Fishdaa\CognitoGuard\Tests\TestCase;
+use Fishdaa\CognitoGuard\UserAttributeService;
 use Firebase\JWT\SignatureInvalidException;
 use Ramsey\Uuid\Uuid;
 
