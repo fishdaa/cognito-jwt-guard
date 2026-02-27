@@ -76,7 +76,7 @@ abstract class TestCase extends Orchestra
             'username' => $sub,
         ];
 
-        $keypair = RSA::createKey(512);
+        $keypair = RSA::createKey(2048);
 
         $kid = (base64_encode(hash ( 'sha256' , $keypair->getPublicKey(), true)));
         $jwt = JWT::encode((array)$payload, $keypair, 'RS256', $kid);

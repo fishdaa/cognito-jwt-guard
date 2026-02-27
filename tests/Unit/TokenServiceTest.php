@@ -133,7 +133,7 @@ class TokenServiceTest extends TestCase
         $jtb = $this->getJwtTestBundle();
 
         $this->mock(JwksService::class,  function ($mock) use($jtb) {
-            $wrongKeypair = RSA::createKey(512);
+            $wrongKeypair = RSA::createKey(2048);
 
             $keyInfo = openssl_pkey_get_details(openssl_pkey_get_public($wrongKeypair->getPublicKey()));
 
@@ -170,7 +170,7 @@ class TokenServiceTest extends TestCase
         });
 
         // This JWT has correct payload and header but is signed with a different key.
-        $keypair = RSA::createKey(512);
+        $keypair = RSA::createKey(2048);
         $invalid_jwt = JWT::encode((array)$jtb->payload, $keypair, 'RS256', $jtb->kid);
 
         $ts = new TokenService();
