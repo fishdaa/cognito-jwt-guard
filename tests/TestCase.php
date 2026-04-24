@@ -9,7 +9,6 @@ use Fishdaa\CognitoGuard\CognitoServiceProvider;
 use Ramsey\Uuid\Uuid;
 use phpseclib3\Crypt\RSA;
 use Firebase\JWT\JWT;
-use Jose\Component\KeyManagement\JWKFactory;
 
 abstract class TestCase extends Orchestra
 {
