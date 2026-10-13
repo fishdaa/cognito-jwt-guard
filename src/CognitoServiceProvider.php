@@ -23,16 +23,23 @@ class CognitoServiceProvider extends ServiceProvider
             return new TokenService();
         });
 
-        $this->app->singleton(CognitoGuard::class, function (Application $app) {
+        // Scoped, not singleton: the guard holds the Request and the resolved
+        // user, so it must be rebuilt per request under long-lived workers
+        // (Laravel Octane / Swoole). Octane flushes scoped instances between requests.
+        $this->app->scoped(CognitoGuard::class, function (Application $app) {
             return new CognitoGuard(
                 new ProviderRepository($app['auth']->createUserProvider('users')),
                 $app['request']
             );
         });
 
+        // Build a fresh guard per resolution so AuthManager's guard cache
+        // can never pin a stale request/user across requests.
         $this->app['auth']->extend('cognito', function ($app, $name, array $config) {
-            $guard = $app->make(CognitoGuard::class);
-            return $guard;
+            return new CognitoGuard(
+                new ProviderRepository($app['auth']->createUserProvider($config['provider'] ?? 'users')),
+                $app['request']
+            );
         });
     }
 
